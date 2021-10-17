@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.calc-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.calculator{
+    display: flex;
+    flex-wrap: wrap;
+    border: 0;
+    border-radius: 1.2em;
+    padding: 5px;
+    height: 0px;
+    min-height: 430px;
+    width: 280px;
+    min-width: 280px;
+    resize: both;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    animation: ani-calc 1.0s alternate;
+}
+
+.equal{
+    border-radius: 0.6em;
+    margin-top: 5px;
+}
+
+#buttonsGroup{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.row{
+    display:flex;
+    flex-direction: row;
+    min-height: 40px;
+    width: 100%;
+}
+
+.painel{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1.0em 1.0em 0 0;
+    margin: 0.06em;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+input{
+    border: 0;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.visor1{
+    height: 100%;
+    padding: 10px;
+}
+
+.visor2{
+    height: 80%;
+    padding: 10px;
+}
+
+.visor3{
+    height: 40%;
+    padding: 10px;
+}
+
+button{
+    color:black;
+    flex-grow: 1;
+    border: 0;
+    border-radius: 0.3em;
+    margin: 0.06em;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    animation: ani-button 5s alternate;
+}
+
+@keyframes ani-calc {
+    from{
+        height: 0px;
+        min-height: 0px;
+    }
+    to{
+        height: 430px;
+        min-height: 430px;
+    }
+}
+@keyframes ani-button {
+    from{
+        border: 200px;
+    }
+    to{
+        border: 0;
+    }
+}
